@@ -7,10 +7,15 @@ return {
         -- first key is the mode
         n = {
           -- second key is the lefthand side of the map
+
+          -- Override leader+x mapping for quickfix/list access introduced in https://github.com/AstroNvim/AstroNvim/commit/99c2b13df7b4943b3f82ca772db3dfb8f13f42e7
+          ["<Leader>x"] = { ":x<cr>", desc = "Save and Close" },
+          ["<Leader>xl"] = false,
+          ["<Leader>xq"] = false,
+
           -- mappings seen under group name "Buffer"
-          ["<leader>x"]= { ":x<cr>", desc = "Save and Close" },
-          ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
-          ["<leader>bD"] = {
+          ["<Leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
+          ["<Leader>bD"] = {
             function()
               require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)
             end,
@@ -23,7 +28,7 @@ return {
             ["<A-k>"] = { "<Esc>:move .-2<CR>==" },
           -- tables with the `name` key will be registered with which-key if it's installed
           -- this is useful for naming menus
-          ["<leader>b"] = { name = "Buffers" },
+          ["<Leader>b"] = { name = "Buffers" },
           ["<F5>"] = { "<cmd>MundoToggle<cr>", desc = "Undo History" },
           -- quick save
           -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
