@@ -51,7 +51,7 @@ return {
         i = {
           j = {
             -- These can all also be functions
-            k = "<Esc>",
+            k = false,
             j = "<Esc>",
           },
         },
