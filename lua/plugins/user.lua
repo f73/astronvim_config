@@ -1,4 +1,4 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- Here are some examples:
@@ -41,45 +41,6 @@ return {
 
   -- You can disable default plugins as follows:
   -- { "max397574/better-escape.nvim", enabled = false },
-
-  {
-    "max397574/better-escape.nvim",
-    require("better_escape").setup {
-      timeout = vim.o.timeoutlen,
-      default_mappings = true,
-      mappings = {
-        i = {
-          j = {
-            -- These can all also be functions
-            k = false,
-            j = "<Esc>",
-          },
-        },
-        c = {
-          j = {
-            k = "<Esc>",
-            j = "<Esc>",
-          },
-        },
-        t = {
-          j = {
-            k = "<Esc>",
-            j = "<Esc>",
-          },
-        },
-        v = {
-          j = {
-            k = "<Esc>",
-          },
-        },
-        s = {
-          j = {
-            k = "<Esc>",
-          },
-        },
-      },
-    },
-  },
 
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   {
